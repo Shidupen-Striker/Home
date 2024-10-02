@@ -1,0 +1,25 @@
+{
+  "name": "shidupen",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/tailwind": "^5.1.1",
+    "astro": "^4.15.10",
+    "autoprefixer": "^10.4.20",
+    "tailwindcss": "^3.4.13",
+    "theme-change": "^2.5.0",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "daisyui": "^4.12.10"
+  }
+}

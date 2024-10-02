@@ -1,0 +1,80 @@
+---
+import "../global.css"
+const {title} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+    </script>
+    <script>
+      import { themeChange } from 'theme-change';
+      themeChange();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li><a>Homepage</a></li>
+            <li><a>About</a></li>
+            <li><a>Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-center">
+        <a class="btn btn-ghost text-xl">Shidupen Striker</a>
+      </div>
+      <div class="navbar-end">
+        <button data-toggle-theme="night,cupcake" data-act-class="ACTIVECLASS" class="btn btn-ghost btn-circle">
+          <span class="material-symbols-outlined">
+            dark_mode
+          </span>
+        </button>
+        <button class="btn" onclick="my_modal_1.showModal()">Discord</button>
+          <dialog id="my_modal_1" class="modal">
+            <div class="modal-box">
+              <h3 class="text-lg font-bold">Warning!</h3>
+              <p class="py-4">This link will take you off of this site. Are you sure you want to continue?
+              </p>
+              <div class="modal-action">
+                <a class="btn btn-ghost" href="https://discord.gg/KYZ5JjqbZt">Yes</a>
+                <form method="dialog">
+                  <button class="btn">No</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+      </div>
+    </div>
+    <slot />
+  </body>
+</html>
