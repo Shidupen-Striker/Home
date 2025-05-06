@@ -12,8 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.1",
-    "@auth/core": "^0.32.0",
-    "astro": "^4.15.10",
+    "@auth/core": "^0.39.0",
+    "astro": "^5.7.10",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "postcss": "^8.4.47",
