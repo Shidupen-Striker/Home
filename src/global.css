@@ -11,3 +11,8 @@ body{
 footer{
     margin-top: auto;
 }
+
+button{
+    cursor: pointer;
+    padding: 10px;
+}
